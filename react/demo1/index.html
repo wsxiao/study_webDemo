@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react demo1</title>
+    <style>
+        #example{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h4>注意点1：script 标签的 type 属性为 text/babel 。这是因为 React 独有的 JSX 语法，跟 JavaScript 不兼容。凡是使用JSX 的地方，都要加上 type="text/babel" 。</h4>
+    <h4>注意点2：上面代码一共用了三个库： react.js 、react-dom.js 和 Browser.js ，它们必须首先加载。其中，react.js 是 React 的核心库，react-dom.js 是提供与 DOM 相关的功能，Browser.js 的作用是将 JSX 语法转为 JavaScript 语法，这一步很消耗时间，实际上线的时候，应该将它放到服务器完成。</h4>
+    <h3 style="color:red;">知识点：ReactDOM.render 是 React 的最基本方法，用于将模板转为 HTML 语言，并插入指定的 DOM 节点。</h3>
+
+    <hr>
+    <h1>开始测试</h1>
+    <div id="example"> </div>
+    <div id="text"></div>
+
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript" src="../react.js"></script> <!--核心库 -->
+    <script type="text/javascript" src="../react-dom.js"></script> <!--提供与 DOM 相关的功能 -->
+    <script type="text/javascript" src="../browser.min.js"></script> <!-- 将 JSX 语法转为 JavaScript 语法-->
+
+    <!--<script type="text/javascript" src="demo1.js"></script>-->
+    <script type="text/babel">
+        var Hellomessage =  React.createClass({  // 注意：Hellomm 第一字母要大写
+            render:function(){
+                return <div> Hello {this.props.name}</div>;
+            }
+        });
+        ReactDOM.render(< Hellomessage name="wangshuangxiao"/>, document.getElementById("example"));
+
+        ReactDOM.render(
+                <h3>hello，wangshuangxiao!</h3>,
+                document.getElementById('text')
+        )
+    </script>
+</body>
+</html>

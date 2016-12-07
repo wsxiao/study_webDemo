@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react demo2</title>
+    <style>
+        #example{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h3 style="color:red;">知识点2：上一节的代码， HTML 语言直接写在 JavaScript 语言之中，不加任何引号，这就是 JSX 的语法，它允许 HTML 与 JavaScript 的混写</h3>
+    <h3 style="color:red;">知识点3：data Flow 单项数据绑定是react推崇的一种应用架构的方式；</h3>
+    <h3 style="color:red;">知识点4：react 的核心思想是：封装组件</h3>
+    <h3 style="color:red;">知识点5：利用 JSX 编写 DOM 结构，可以用原生的 HTML 标签，也可以直接像普通标签一样引用 React 组件。这两者约定通过大小写来区分，小写的字符串是 HTML 标签，大写开头的变量是 React 组件。</h3>
+    <hr>
+    <h1>开始测试</h1>
+    <div id="example"> </div>
+    <div id="text"></div>
+    <div id="mountNode"></div>
+
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript" src="../react.js"></script> <!--核心库 -->
+    <script type="text/javascript" src="../react-dom.js"></script> <!--提供与 DOM 相关的功能 -->
+    <script type="text/javascript" src="../browser.min.js"></script> <!-- 将 JSX 语法转为 JavaScript 语法-->
+
+    <!--<script type="text/javascript" src="demo1.js"></script>-->
+    <script type="text/babel">
+        var names = ['tom', 'lindda', 'kate', 'rose'];
+        ReactDOM.render(
+                <div>
+                    {
+                        names.map(function(name){
+                            return <div>Hello,{name}! </div>
+                        })
+                    }
+                </div>,
+        document.getElementById('example')
+
+        );
+
+    </script>
+</body>
+</html>
