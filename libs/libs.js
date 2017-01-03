@@ -17,6 +17,16 @@ app.controller('show',['$scope','$location','$anchorScroll',function($scope,$loc
         //console.log(id);
         $location.hash(id);//添加锚点
         $anchorScroll();    //重新定义服务,解决当滑动时点击锚点无作用的bug
+    };
+
+    document.onscroll = function(){
+        // if(document.body.scrollTop+document.body.clientHeight>=document.body.scrollHeight){
+        //     alert('bottom');
+        // }
+        var docHeight = document.body.scrollTop;
+        if(docHeight > 970){
+            alert("可以出现了");
+        }
     }
 
 }]);

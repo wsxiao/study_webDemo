@@ -23,3 +23,5 @@ var sorted = data.sort((a, b) => {
     return a - b;
 });
 console.log(sorted);
+
+
